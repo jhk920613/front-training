@@ -1,0 +1,72 @@
+{
+  "name": "@nara.drama/qna",
+  "version": "0.0.1",
+  "description": "Nara Drama QnA",
+  "author": "Nextree",
+  "main": "./comp/lib.js",
+  "types": "./comp/types/index.d.ts",
+  "files": [
+    "comp",
+    "public"
+  ],
+  "publishConfig": {
+    "registry": "http://58.225.16.61:80/repository/npm-private/"
+  },
+  "scripts": {
+    "storybook": "start-storybook -s public -p 4000",
+    "analyze-storybook": "ANALYZE=true yarn storybook",
+    "build-storybook": "build-storybook -s public",
+    "build-lib": "react-scripts build-lib && ttsc -p src/comp/tsconfig.json"
+  },
+  "dependencies": {
+    "@nara.drama/prologue": "^0.3.3",
+    "@nara.platform/react-ui": "0.5.2",
+    "@nara.drama/qna": "",
+    "mobx": "^6.1.4",
+    "mobx-react": "^7.1.0",
+    "react": "^16.13.0"
+  },
+  "devDependencies": {
+    "@nara.platform/storybook": "^0.1.15",
+    "@types/node": "^13.9.1",
+    "@types/react": "^16.9.23",
+    "nara-react-scripts": "^0.3.9",
+    "ttypescript": "^1.5.11",
+    "typescript": "^3.8.3",
+    "typescript-transform-paths": "^2.0.0"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "babel-plugin-import",
+        {
+          "libraryName": "@material-ui/core",
+          "libraryDirectory": "",
+          "camel2DashComponentName": false
+        },
+        "core"
+      ],
+      [
+        "babel-plugin-import",
+        {
+          "libraryName": "@material-ui/icons",
+          "libraryDirectory": "",
+          "camel2DashComponentName": false
+        },
+        "icons"
+      ]
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

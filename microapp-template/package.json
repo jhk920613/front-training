@@ -1,0 +1,66 @@
+{
+  "name": "microapp",
+  "version": "0.0.1",
+  "description": "Micro App",
+  "author": "Nextree",
+  "main": "./lib/lib.js",
+  "types": "./lib/types.ts",
+  "files": [
+    "lib",
+    "public",
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "http://58.225.16.61:80/repository/npm-private/"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development PORT=3000 node config/server.js",
+    "build-app": "next build",
+    "analyze-app": "ANALYZE=true yarn build-app",
+    "start-app": "cross-env NODE_ENV=production PORT=80 node config/server.js",
+    "start-next": "next start",
+    "export-app": "next export"
+  },
+  "dependencies": {
+    "@nara.drama/prologue": "^0.3.3",
+    "@nara.platform/react-ui": "^0.5.2",
+    "@nara.drama/qna": "^0.0.3-beta.7",
+    "@nara.drama/board": "^0.0.2-next.4",
+    "clsx": "^1.1.1",
+    "mobx": "^6.1.4",
+    "mobx-react": "^7.1.0",
+    "next": "^10.0.3",
+    "query-string": "^6.13.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "7.8.3",
+    "@next/bundle-analyzer": "^10.0.3",
+    "@types/node": "^13.9.1",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-helmet": "^6.1.0",
+    "cross-env": "^7.0.2",
+    "nara-react-scripts": "^0.3.9",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^4.1.0",
+    "typescript": "^3.8.3"
+  },
+  "eslintConfig": {
+    "extends": "nara"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

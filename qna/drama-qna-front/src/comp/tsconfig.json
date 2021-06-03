@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": false,
+    "jsx": "react",
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "../../comp/types",
+    "plugins": [{
+      "transform": "typescript-transform-paths",
+      "afterDeclarations": true
+    }]
+  },
+  "include": [
+    "**/*"
+  ]
+}
